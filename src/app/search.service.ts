@@ -12,7 +12,10 @@ export class SearchService {
   user!:User;
   repos!:Repo;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    this.user = new User("",0,0,0,"","");
+    this.repos = new Repo("","","","");
+  }
 
   getProfile(username:string){
     interface ApiResponse{

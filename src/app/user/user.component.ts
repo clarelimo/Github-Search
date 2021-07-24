@@ -9,8 +9,10 @@ import { User } from '../user';
 })
 export class UserComponent implements OnInit {
 
-  user!:User;
-  constructor(userService:SearchService) { }
+  users!:User;
+  constructor(userService:SearchService) {
+    this.users = userService.user;
+   }
 
   ngOnInit(): void {
   }
