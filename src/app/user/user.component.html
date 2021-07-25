@@ -1,69 +1,43 @@
+<app-header></app-header>
 <div class="container mt-5">
     <app-search (searchResult) = "searchUser($event)"></app-search>
-    <div class="container content">
-        <div class="row">
-          <div class="col-sm-4" id="imgcard">
-            <div class="userimage">
-              <div class="card-img-top">
-                <img src="{{user.avatar_url}}" alt="">
-              </div> 
-              <div class="card-body">
-                  <span  class="name"><i class="fa fa-user" style="font-size:20px"></i> &nbsp;{{user.login}}</span> <a href="{{user.url}}"><button class="btn-outline-success btn btn-sm"><i class="fa fa-github" style="font-size:20px"></i> &nbsp; <span id="profile">Github</span> </button></a>
-              </div>
-            </div>
-            </div>
-          <div class="col-sm-7 user">
-            <div class="card" appHighlight>
-              <div class="card-body">
-                <h4>Git-Search: {{user.login}}</h4>
-                <hr>
-                <p><i class="fa fa-file-o" style="font-size:18px"></i>&nbsp;&nbsp; Repositories:&nbsp;&nbsp; <span class="follow">{{user.public_repos}}</span></p>
-                <hr>
-                <p> <i class="fa fa-user" style="font-size:18px"></i>&nbsp;&nbsp; Following:&nbsp;&nbsp; <span class="follow">{{user.following}}</span></p>
-                <hr>
-                <p> <i class="fa fa-users"style="font-size:18px"></i>&nbsp;&nbsp; Followers:&nbsp;&nbsp; <span class="follow">{{user.followers}}</span></p>
-                <hr>
-                <hr>
-              </div>
-            </div>  
-          </div>
-        </div> 
-      </div>
     <div class="row mt-5">
         <div class="col-md-5">
             <div class="row">
-                <img src="https://images.unsplash.com/photo-1622495546323-5dac33dedb01?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" class="rounded-circle" alt="Avatar">
+                <img src="{{user.avatar_url}}" class="rounded-circle" alt="Avatar">
             </div>
-            <div class="row mb-5 text-center">
-                <h2 class="mt-5 mb-4">Clare Limo</h2>
-                <!-- <p>Followers: {{user.followers}} Following: {{user.following}} Repositories:  {{user.public_repos}}</p> -->
-                <!-- <div class="col-md-4">
-                    <p>Followers:</p>
+            <div class="row mb-5">
+                <h2 class="mt-5 mb-4">{{user.name}}</h2>
+        
+                <div class="col-md-2">
+                    <p>Followers: {{user.followers}}</p>
                 </div>
-                <div class="col-md-4">
-                    <p>Following:</p>
+                <div class="col-md-2">
+                    <p>Following: {{user.following}}</p>
                 </div>
-                <div class="col-md-4">
-                    <p>Repositories:</p>
-                </div> -->
+                <div class="col-md-2">
+                    <p>Repositories: {{user.public_repos}}</p>
+                </div>
             </div>
         </div>
         <div class="col-md-7">
-            <h1 class="text-center">Repositories</h1>
-            <div class="card" *ngFor="let repo of repos">
-                <div class="card-header">
-                    Repo Name
-                    <a href="#">{{repo.name}}</a>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">{{repo.description}} </p>
-                  <p>With supporting text below as a natural lead-in to additional content.</p>
-                  
-                </div>
-                <div class="card-footer text-muted">
-                  <p>Language: </p> {{repo.language}}
+            <h1 class="mb-5">Repositories</h1>
+            <div class="row">
+                <div class="mb-4 col-md-6" *ngFor="let repo of repos">
+                    <div class="card text-white bg-dark h-100">
+                        <div class="card-header">
+                            <h4><a href="#">{{repo.name}}</a></h4>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text">{{repo.description}} </p>
+                        </div>
+                        <div class="card-footer text-muted">
+                          <p>Language: {{repo.language}}</p> 
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

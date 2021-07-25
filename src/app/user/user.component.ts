@@ -18,7 +18,6 @@ export class UserComponent implements OnInit {
    searchUser(username:string){
      this.userService.getProfile(username).then((success)=>{
       this.user = this.userService.user;
-      alert(this.user.name);
      },
      (error)=>{
        console.log(error)

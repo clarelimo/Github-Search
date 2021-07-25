@@ -28,17 +28,10 @@ export class SearchService {
         public_repos:number;
     }
     let userUrl = 'https://api.github.com/users/'+username+'?access_token='+environment.apiKey;
-    //  alert(userUrl)
+
     let promise = new Promise<void>((resolve,reject) =>{
       this.http.get<ApiResponse>(userUrl).toPromise().then
       (response => {
-        // this.user.name = response.name;
-        // this.user.url = response.url;
-        // this.user.avatar = response.avatar_url;
-        // this.user.followers = response.followers;
-        // this.user.following = response.following;
-        // this.user.repos = response.public_repos;
-        // this.user.login = response.login;
         this.user = response;
 
         resolve()
