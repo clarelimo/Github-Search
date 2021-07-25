@@ -1,5 +1,10 @@
 # GithubSearch
 
+#### By **Clare Limo**
+
+## Description
+This is an angular application that allows users to enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
 ## Development server
@@ -21,6 +26,25 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Setup/Installation Requirements
+* You need to have visual studio code installed.
+* Clone the repository
+* Generate an api key and store it in the environment
+* Go Live.
+## Known Bugs
+There are no known bugs.
+## Technologies Used
+* HTML 
+* CSS 
+* Angular
+* Bootstrap
+## Support and contact details
+Email : clare.limo@student.moringaschool.com
+### License
+[MIT License](./LICENSE)
+
+Copyright (c) [2021] [Clare Limo]
 
 ## Further help
 
