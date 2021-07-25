@@ -11,7 +11,7 @@ import { User } from '../user';
 export class UserComponent implements OnInit {
 
   user!:User;
-  repo!:Repo;
+  repos:any;
   
   constructor(public userService:SearchService) {
     // this.user = userService.user;
@@ -19,12 +19,13 @@ export class UserComponent implements OnInit {
    searchUser(username:string){
      this.userService.getProfile(username).then((success)=>{
       this.user = this.userService.user;
+      console.log(this.user);
      },
      (error)=>{
        console.log(error)
      });
      this.userService.getRepo(username).then((success)=>{
-      this.repo = this.userService.repos;
+      this.repos = this.userService.repos;
      },
      (error)=>{
        console.log(error)
