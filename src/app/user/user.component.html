@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="avatar">
-                    <img class="rounded-circle" alt="100x100" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
+                    <img class="rounded-circle" alt="100x100" src="{{user.avatar}}"
                     data-holder-rendered="true">
             </div>
             <div class="row text-center">
@@ -20,6 +20,20 @@
         </div>
         <div class="col-md-7">
             <h1 class="text-center">Repositories</h1>
+            <div class="card">
+                <div class="card-header">
+                    Repo Name
+                    <a href="#">{{repo.name}}</a>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{{repo.description}} </p>
+                  <p>With supporting text below as a natural lead-in to additional content.</p>
+                  
+                </div>
+                <div class="card-footer text-muted">
+                  <p>Language: </p> {{repo.language}}
+                </div>
+              </div>
         </div>
     </div>
 </div>

@@ -12,9 +12,9 @@ export class SearchComponent implements OnInit {
   public userQuery!: string;
   @Output() searchResult = new EventEmitter<any>()
   constructor() {
-    // this.users = searchService.getProfile();
+   
   }
-  
+
   searchUser(){
     this.searchResult.emit(this.userQuery);
   }

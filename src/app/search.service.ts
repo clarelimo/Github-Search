@@ -13,18 +13,19 @@ export class SearchService {
   repos!:Repo;
 
   constructor(private http:HttpClient) { 
-    this.user = new User("",0,0,0,"","");
+    this.user = new User("",0,0,0,"","","");
     this.repos = new Repo("","","","");
   }
 
   getProfile(username:string){
     interface ApiResponse{
         name:string;
+        login: string;
         url:string
-        avatar:string;
+        avatar_url:string;
         followers:number;
         following:number;
-        repos:number;
+        public_repos:number;
     }
 
     let promise = new Promise<void>((resolve,reject) =>{
@@ -32,10 +33,11 @@ export class SearchService {
       (response => {
         this.user.name = response.name;
         this.user.url = response.url;
-        this.user.avatar = response.avatar;
+        this.user.avatar = response.avatar_url;
         this.user.followers = response.followers;
         this.user.following = response.following;
-        this.user.repos = response.repos;
+        this.user.repos = response.public_repos;
+        this.user.login = response.login;
 
         resolve()
       },
@@ -51,7 +53,7 @@ export class SearchService {
     getRepo(username:string){
       interface ApiResponse{
         name:string;
-        url:string;
+        html_url:string;
         description:string;
         language:string;
         
@@ -60,7 +62,7 @@ export class SearchService {
         this.http.get<ApiResponse>(`https://api.github.com/users/'${username}"/repos?order=created&sort=asc?access_token="${environment.apiKey}`).toPromise().then
         (response => {
             this.repos.name = response.name;
-            this.repos.url = response.url;
+            this.repos.url = response.html_url;
             this.repos.description = response.description;
             this.repos.language = response.language;
   

@@ -1,9 +1,10 @@
 <div class="container w-50 mt-5">
-    <form (ngSubmit)="searchUser()" ></form>
-    <div class="input-group">
-        <input type="search" [(ngModel)]="userQuery" name="user" class="form-control rounded " placeholder="Search" aria-label="Search"
-          aria-describedby="search-addon" />
-        <button type="button" class="btn btn-outline-dark">search</button>
-    </div>
+    <form (ngSubmit)="searchUser()" >
+        <div class="input-group">
+            <input type="search" [(ngModel)]="userQuery" name="user" class="form-control rounded " placeholder="Search" aria-label="Search"
+              aria-describedby="search-addon" />
+            <button type="button" class="btn btn-outline-dark">search</button>
+        </div>
+    </form>
 </div>
 
