@@ -24,9 +24,9 @@
             <h1 class="mb-5">Repositories</h1>
             <div class="row repo">
                 <div class="mb-4 col-md-6" *ngFor="let repo of repos">
-                    <div class="card text-white h-100">
+                    <div class="card text-white h-100 ">
                         <div class="card-header">
-                            <h4><a href="#">{{repo.name}}</a></h4>
+                            <h4><a href="{{repo.html_url}}">{{repo.name}}</a></h4>
                         </div>
                         <div class="card-body">
                           <p class="card-text">{{repo.description}} </p>
