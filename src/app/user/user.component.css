@@ -2,7 +2,7 @@ img{
     height: 236px;
     width: 304px;
 }
-a:link { text-decoration: none; }
+a { text-decoration: none; color: rgb(90,165,251);}
 
 .card{
     background-color: #0D1117;

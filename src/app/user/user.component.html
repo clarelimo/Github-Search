@@ -32,7 +32,15 @@
                           <p class="card-text">{{repo.description}} </p>
                         </div>
                         <div class="card-footer text-muted">
-                          <p>Language: {{repo.language}}</p> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <small>Language: {{repo.language}}</small> 
+                                </div>
+                                <div class="col-md-6">
+                                    <small>Posted: {{repo.created_at| dateCount}}</small> 
+                                </div>
+                            </div>
+                          
                         </div>
                     </div>
                     <hr>

@@ -14,7 +14,7 @@ export class SearchService {
 
   constructor(private http:HttpClient) { 
     this.user = new User("",0,0,0,"","","");
-    this.repos = new Repo("","","","");
+    this.repos = new Repo("","","","",new Date());
   }
 
   getProfile(username:string){
@@ -51,6 +51,7 @@ export class SearchService {
         html_url:string;
         description:string;
         language:string;
+        created_at:Date
         
       }
       let repoUrl = 'https://api.github.com/users/'+username+'/repos?order=created&sort=asc?access_token='+environment.apiKey;
