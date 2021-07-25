@@ -1,5 +1,4 @@
 import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
-// import { EventEmitter } from 'stream';
 import { SearchService } from '../search.service';
 import { User } from '../user';
 

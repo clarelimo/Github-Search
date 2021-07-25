@@ -14,12 +14,11 @@ export class UserComponent implements OnInit {
   repos:any;
   
   constructor(public userService:SearchService) {
-    // this.user = userService.user;
    }
    searchUser(username:string){
      this.userService.getProfile(username).then((success)=>{
       this.user = this.userService.user;
-      console.log(this.user);
+      alert(this.user.name);
      },
      (error)=>{
        console.log(error)

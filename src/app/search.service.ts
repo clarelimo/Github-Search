@@ -27,8 +27,8 @@ export class SearchService {
         following:number;
         public_repos:number;
     }
-    let userUrl = 'https://api.github.com/users/'+username+'?access_token= '+environment.apiKey;
-    console.log(userUrl)
+    let userUrl = 'https://api.github.com/users/'+username+'?access_token='+environment.apiKey;
+    //  alert(userUrl)
     let promise = new Promise<void>((resolve,reject) =>{
       this.http.get<ApiResponse>(userUrl).toPromise().then
       (response => {
@@ -60,16 +60,12 @@ export class SearchService {
         language:string;
         
       }
+      let repoUrl = 'https://api.github.com/users/'+username+'/repos?order=created&sort=asc?access_token='+environment.apiKey;
       let promise = new Promise<void>((resolve,reject) =>{
-        this.http.get<ApiResponse>('https://api.github.com/users/'+username+'/repos?order=created&sort=asc?access_token='+environment.apiKey).toPromise().then
+        this.http.get<ApiResponse>(repoUrl).toPromise().then
         (response => {
-            // this.repos.name = response.name;
-            // this.repos.html_url = response.html_url;
-            // this.repos.description = response.description;
-            // this.repos.language = response.language;
-
             this.repos = response;
-            
+            console.log(this.repos);
           resolve()
         },
         error=>{
