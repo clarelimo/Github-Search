@@ -3,3 +3,7 @@ img{
     width: 304px;
 }
 a:link { text-decoration: none; }
+
+.card{
+    background-color: #0D1117;
+}
