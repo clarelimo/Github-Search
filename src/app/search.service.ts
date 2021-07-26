@@ -27,7 +27,8 @@ export class SearchService {
         following:number;
         public_repos:number;
     }
-    let userUrl = 'https://api.github.com/users/'+username+'?access_token='+environment.apiKey;
+
+    let userUrl = 'https://api.github.com/users/'+username+'?client_id='+environment.clientId + "&client_secret="+environment.clientSecret;
 
     let promise = new Promise<void>((resolve,reject) =>{
       this.http.get<ApiResponse>(userUrl).toPromise().then
@@ -54,7 +55,7 @@ export class SearchService {
         created_at:Date
         
       }
-      let repoUrl = 'https://api.github.com/users/'+username+'/repos?order=created&sort=asc?access_token='+environment.apiKey;
+      let repoUrl = 'https://api.github.com/users/'+username+'/repos?order=created&sort=asc?client_id='+environment.clientId + '&client_secret='+environment.clientSecret;
       let promise = new Promise<void>((resolve,reject) =>{
         this.http.get<ApiResponse>(repoUrl).toPromise().then
         (response => {
